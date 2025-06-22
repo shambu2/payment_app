@@ -4,7 +4,8 @@ import './App.css'
 import SignupPage from './pages/SignupPage'
 import Signinpage from './pages/Signinpage'
 import Dashboard from './pages/Dashboard'
-import Send from './pages/Send'
+import { SendMoney } from './pages/Send'
+// import Send from './pages/Send'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -15,7 +16,8 @@ function App() {
         <Route path='/signup' element={<SignupPage/>}/>
         <Route path='/signin' element={<Signinpage/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/send' element={<Send/>}/>
+        {/* <Route path='/send' element={<Send/>}/> */}
+        <Route path='/send' element={<SendMoney/>}/>
         
       </Routes>
     </Router>

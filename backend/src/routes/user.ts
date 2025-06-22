@@ -92,7 +92,7 @@ router.post("/signin", async (req: Request, res: Response) => {
     const user = await User.findOne({
       username: req.body.username,
     });
-    const passwordVerified = bcrypt.compareSync(req.body.password, user?.id);
+    const passwordVerified = bcrypt.compareSync(req.body.password, user?.password as string);
     if (!passwordVerified) {
       res.status(401).json({
         message: "Enter correct message",
@@ -108,7 +108,7 @@ router.post("/signin", async (req: Request, res: Response) => {
       );
 
       res.json({
-        message: "User created successfully",
+        message: "Logged in correctly",
         token: token,
       });
       return;
